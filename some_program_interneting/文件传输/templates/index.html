@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件管理系统</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* 浅灰背景色 */
+        }
+        .custom-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">欢迎使用文件管理系统</h1>
+        <p class="text-center text-muted mb-5">请选择您的角色并开始操作</p>
+
+        <div class="row justify-content-center">
+            <!-- 发送方卡片 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card custom-card text-center">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="发送方图标" class="img-fluid mb-3" style="height: 100px;">
+                        <h5 class="card-title">发送方</h5>
+                        <p class="card-text text-muted">上传或管理文件，随时与接收方共享</p>
+                        <a href="/sender" class="btn btn-primary btn-custom">进入发送方界面</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 接收方卡片 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card custom-card text-center">
+                    <div class="card-body">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921169.png" alt="接收方图标" class="img-fluid mb-3" style="height: 100px;">
+                        <h5 class="card-title">接收方</h5>
+                        <p class="card-text text-muted">查看并下载发送方上传的文件</p>
+                        <a href="/receiver" class="btn btn-success btn-custom">进入接收方界面</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5">
+            <p>© 2023 文件管理系统. 由 <a href="#" class="text-decoration-none">您的团队</a> 提供支持。</p>
+        </footer>
+    </div>
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

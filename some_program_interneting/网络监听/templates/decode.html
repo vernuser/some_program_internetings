@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解码报文</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">解码报文</h2>
+        <pre>{{ packet | tojson(indent=2) | safe }}</pre>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary">返回仪表盘</a>
+    </div>
+</body>
+</html>

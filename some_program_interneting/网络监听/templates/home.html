@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Dashboard</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Packet Statistics</h3>
+                <ul>
+                    <li>Total Packets: {{ stats.total }}</li>
+                    <li>IPv4 Packets: {{ stats.ipv4 }}</li>
+                    <li>TCP Packets: {{ stats.tcp }}</li>
+                    <li>UDP Packets: {{ stats.udp }}</li>
+                    <li>ARP Packets: {{ stats.arp }}</li>
+                    <li>ICMPv4 Packets: {{ stats.icmpv4 }}</li>
+                    <li>IPv6 Packets: {{ stats.ipv6 }}</li>
+                    <li>ICMPv6 Packets: {{ stats.icmpv6 }}</li>
+                    <li>DNS Packets: {{ stats.dns }}</li>
+                    <li>HTTP Packets: {{ stats.http }}</li>
+                </ul>
+                <h3>Captured Packets</h3>
+                <ul>
+                    {% for packet in packets %}
+                        <li><a href="{{ url_for('decode', packet_id=loop.index0) }}">Packet {{ loop.index }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
